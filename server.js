@@ -8,7 +8,7 @@ const userRoutes = require('./src/routes/userRoutes');
 const app = express();
 
 app.use(cors({
-    origin: ['http://localhost:3000', 'https://ee9c-186-224-145-64.ngrok-free.app'], // Lista de origens permitidas
+    origin: ['http://localhost:3000', 'https://ee9c-186-224-145-64.ngrok-free.app', 'https://glico-flow-7nrv-g9suzm3k3-fellipescrups-projects.vercel.app/', 'https://glico-flow-7nrv.vercel.app/'], // Lista de origens permitidas
     credentials: true
 }));
 
