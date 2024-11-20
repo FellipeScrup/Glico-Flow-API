@@ -4,6 +4,7 @@ const express = require('express');
 const cors = require('cors');
 const connectDB = require('./src/config/db');
 const userRoutes = require('./src/routes/userRoutes');
+const measurementRoutes = require('./src/routes/measurementRoutes');
 
 const app = express();
 
@@ -13,6 +14,9 @@ app.use(cors({
 }));
 
 app.use(express.json());
+
+
+app.use('/api/measurements', measurementRoutes);
 
 // Connect to MongoDB
 connectDB();

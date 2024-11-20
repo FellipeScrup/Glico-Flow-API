@@ -33,7 +33,7 @@ const userSchema = new mongoose.Schema({
     },
     gender: {
         type: String,
-        enum: ['Male', 'Female', 'Other'] // Optional: restrict to certain values
+        enum: ['Male', 'Female', 'Other']
     },
     diabetesType: {
         type: String,
@@ -45,7 +45,7 @@ const userSchema = new mongoose.Schema({
     },
     medication: {
         type: String,
-        enum: ['sim', 'nao'] // Assuming 'sim' and 'nao' are the possible values
+        enum: ['sim', 'nao']
     },
     glycemiaUnit: {
         type: String,
@@ -55,11 +55,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         enum: ['g', 'ex']
     },
-    // New field for glycemia value
     glycemiaValue: {
         type: Number,
-        min: 20,  // Minimum acceptable value
-        max: 600  // Maximum acceptable value
+        min: 20, 
+        max: 900 
     },
     glycemiaRecordedAt: {
         type: Date
@@ -75,7 +74,13 @@ const userSchema = new mongoose.Schema({
     },
     customSensor: {
         type: String
-    }
+    },
+    glycemiaGoals: {
+        targetMin: { type: Number, default: 70 },
+        targetMax: { type: Number, default: 180 },
+        hypoLimit: { type: Number, default: 60 },
+        hyperLimit: { type: Number, default: 200 },
+    },
 });
 
 module.exports = mongoose.model('User', userSchema);
