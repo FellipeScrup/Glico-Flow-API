@@ -9,12 +9,28 @@ const measurementRoutes = require('./src/routes/measurementRoutes');
 const app = express();
 
 app.use(cors({
-    origin: ['http://localhost:3000', 'https://glico-flow.vercel.app'], // Lista de origens permitidas
-    credentials: true
+    origin: [
+        'http://localhost:3000',
+        'https://glico-flow.vercel.app',
+        'https://glico-flow-api.onrender.com'
+    ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
+    preflightContinue: false,
+    optionsSuccessStatus: 204
 }));
 
 app.use(express.json());
 
+app.use((req, res, next) => {
+    console.log('Requisição recebida:', {
+        método: req.method,
+        url: req.url,
+        headers: req.headers
+    });
+    next();
+});
 
 app.use('/api/measurements', measurementRoutes);
 
