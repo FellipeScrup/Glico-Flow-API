@@ -12,7 +12,8 @@ app.use(cors({
     origin: [
         'http://localhost:3000',
         'https://glico-flow.vercel.app',
-        'https://glico-flow-api.onrender.com'
+        'https://glico-flow-api.onrender.com',
+        'https://glico-flow-fellipescrups-projects.vercel.app'
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
