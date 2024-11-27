@@ -5,14 +5,14 @@ const cors = require('cors');
 const connectDB = require('./src/config/db');
 const userRoutes = require('./src/routes/userRoutes');
 const measurementRoutes = require('./src/routes/measurementRoutes');
-
+const reportRoutes = require('./src/routes/reportRoutes');
 const app = express();
 
 app.use(cors({
     origin: [
         'http://localhost:3000',
         'https://glico-flow.vercel.app',
-        'https://glico-flow-api.onrender.com',
+        'http://localhost:5000',
         'https://glico-flow-fellipescrups-projects.vercel.app'
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -40,6 +40,7 @@ connectDB();
 
 // API routes
 app.use('/api/users', userRoutes);
+app.use('/api/reports', reportRoutes);
 
 // Start server
 const PORT = process.env.PORT || 5000;

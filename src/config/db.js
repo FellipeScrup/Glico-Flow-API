@@ -14,4 +14,12 @@ const connectDB = async () => {
     }
 };
 
+mongoose.connection.on('connected', () => {
+  console.log('MongoDB conectado com sucesso');
+});
+
+mongoose.connection.on('error', (err) => {
+  console.error('Erro na conexão com MongoDB:', err);
+});
+
 module.exports = connectDB;
