@@ -6,7 +6,6 @@
 
 *Facilitando o gerenciamento da diabetes com inovação e inteligência!*
 
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 [![Node.js](https://img.shields.io/badge/Node.js-20+-green.svg)](https://nodejs.org/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-Latest-brightgreen.svg)](https://www.mongodb.com/)
 
