@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![GlicoFlow Logo](https://via.placeholder.com/150)
+![GlicoFlow Logo](https://glico-flow-fellipescrups-projects.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fglicoflow-logo.33783831.png&w=384&q=75)
 
 *Facilitando o gerenciamento da diabetes com inovação e inteligência!*
 
