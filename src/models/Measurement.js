@@ -20,4 +20,7 @@ const measurementSchema = new mongoose.Schema({
     },
 });
 
+measurementSchema.index({ user: 1, recordedAt: -1 });
+measurementSchema.index({ glycemiaValue: 1 });
+
 module.exports = mongoose.model('Measurement', measurementSchema);

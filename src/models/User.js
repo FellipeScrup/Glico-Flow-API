@@ -83,4 +83,7 @@ const userSchema = new mongoose.Schema({
     },
 });
 
+userSchema.index({ email: 1 });
+userSchema.index({ 'glycemiaGoals.targetMin': 1, 'glycemiaGoals.targetMax': 1 });
+
 module.exports = mongoose.model('User', userSchema);

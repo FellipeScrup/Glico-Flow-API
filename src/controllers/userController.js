@@ -2,6 +2,8 @@
 const User = require('../models/User');
 const { generateToken, verifyToken } = require('../utils/tokenUtils');
 const Measurement = require('../models/Measurement');
+const cache = require('../config/cache');
+
 
 exports.signup = async (req, res) => {
     console.log('Request Body:', req.body);
@@ -56,16 +58,27 @@ exports.updateUser = async (req, res) => {
 exports.getUserProfile = async (req, res) => {
     try {
         const userId = req.user.id;
+        const cacheKey = `user_profile_${userId}`;
 
-        const user = await User.findById(userId).select('-password');
+        // Verificar cache primeiro
+        const cachedData = cache.get(cacheKey);
+        if (cachedData) {
+            return res.status(200).json(cachedData);
+        }
+
+        // Se não estiver em cache, buscar do banco
+        const [user, measurements] = await Promise.all([
+            User.findById(userId).select('-password'),
+            Measurement.find({ user: userId })
+                .sort({ recordedAt: -1 })
+                .limit(100) // Limitar quantidade de registros
+                .lean() // Usar lean() para consultas mais rápidas
+        ]);
 
         if (!user) {
             return res.status(404).json({ message: 'Usuário não encontrado' });
         }
-
-        // Obter todas as medições do usuário
-        const measurements = await Measurement.find({ user: userId }).sort({ recordedAt: -1 });
-
+            
         // Calcular estatísticas
         let averageGlycemia = null;
         let lowestGlycemia = null;
