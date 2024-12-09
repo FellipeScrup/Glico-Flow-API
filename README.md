@@ -1,19 +1,26 @@
-```markdown:README.md
-# 🌟 GlicoFlow API
+# 🌟 **GlicoFlow API**
 
 <div align="center">
 
 ![GlicoFlow Logo](https://via.placeholder.com/150)
 
-*Transformando o controle da diabetes em uma jornada mais inteligente*
+*Facilitando o gerenciamento da diabetes com inovação e inteligência!*
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![Node.js](https://img.shields.io/badge/Node.js-20+-green.svg)](https://nodejs.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-Latest-brightgreen.svg)](https://www.mongodb.com/)
 
 </div>
 
-## 🚀 Visão Geral
+---
 
-GlicoFlow é uma API robusta e moderna desenvolvida para revolucionar o monitoramento da diabetes. Com recursos avançados de rastreamento, análise e geração de relatórios, nossa API oferece uma solução completa para o gerenciamento de dados glicêmicos.
+## 🚀 **Visão Geral**
 
-## 👨‍💻 Desenvolvedor
+GlicoFlow é uma API projetada para transformar a forma como pacientes e profissionais da saúde gerenciam dados glicêmicos. Oferecemos ferramentas avançadas para rastrear, analisar e gerar relatórios personalizados, tornando o monitoramento da diabetes mais eficiente.
+
+---
+
+## 👨‍💻 **Desenvolvedor**
 
 <div align="center">
 
@@ -22,49 +29,53 @@ GlicoFlow é uma API robusta e moderna desenvolvida para revolucionar o monitora
 
 </div>
 
-## ✨ Funcionalidades Principais
+---
 
-### 🔐 Autenticação & Segurança
-- Sistema robusto de autenticação JWT
-- Proteção contra ataques de força bruta
-- Rate limiting inteligente
-- Criptografia de ponta a ponta
+## ✨ **Principais Funcionalidades**
 
-### 📊 Monitoramento Glicêmico
-- Registro simplificado de medições
-- Análise de tendências
-- Alertas personalizáveis
+### 🔐 **Autenticação Segura**
+- Proteção com JWT
+- Bloqueio contra ataques de força bruta
+- Rate limiting configurado
+- Criptografia de dados
+
+### 📊 **Monitoramento Glicêmico**
+- Registro e consulta de medições
+- Análise de tendências personalizadas
+- Alertas configuráveis
 - Histórico detalhado
 
-### 📈 Relatórios & Análises
-- Relatórios personalizados em PDF
-- Estatísticas avançadas
-- Estimativas de HbA1c
-- Visualização de dados
+### 📈 **Relatórios Avançados**
+- Relatórios em PDF
+- Visualização interativa de dados
+- Estatísticas e estimativas de HbA1c
 
-## 🛠️ Stack Tecnológica
+---
 
-- **Backend**: `Node.js` & `Express.js`
-- **Database**: `MongoDB` com `Mongoose`
+## 🛠️ **Stack Tecnológica**
+
+- **Backend**: `Node.js` com `Express.js`
+- **Banco de Dados**: `MongoDB` + `Mongoose`
 - **Cache**: `Node-Cache`
 - **Autenticação**: `JWT`
 - **Documentação**: `Swagger`
 - **Segurança**: `Helmet`, `CORS`, `Rate Limiting`
 
-## 🚀 Começando
+---
 
-### Pré-requisitos
+## 🚀 **Como Começar**
 
-```bash
-Node.js ≥ 20.0.0
-MongoDB
-```
+### **Pré-requisitos**
+- Node.js v20+
+- MongoDB instalado
 
-### ⚡ Instalação Rápida
-
+### **Instalação**
 ```bash
 # Clone o repositório
 git clone https://github.com/seu-usuario/glico-flow-api.git
+
+# Navegue até a pasta
+cd glico-flow-api
 
 # Instale as dependências
 npm install
@@ -76,28 +87,26 @@ cp .env.example .env
 npm run dev
 ```
 
-## 📡 Endpoints da API
+---
 
-### 👤 Usuários
-```http
-POST   /api/users/signup    # Registro de novo usuário
-POST   /api/users/signin    # Login
-GET    /api/users/profile   # Perfil do usuário
-PUT    /api/users/update    # Atualização de dados
-```
+## 📡 **Endpoints Principais**
 
-### 📊 Medições
-```http
-POST   /api/measurements    # Nova medição
-GET    /api/measurements    # Histórico de medições
-```
+### 👤 **Usuários**
+- `POST /api/users/signup` → Registro
+- `POST /api/users/signin` → Login
+- `GET /api/users/profile` → Dados do usuário
+- `PUT /api/users/update` → Atualizar perfil
 
-### 📋 Relatórios
-```http
-GET    /api/reports        # Geração de relatórios
-```
+### 📊 **Medições**
+- `POST /api/measurements` → Registrar medição
+- `GET /api/measurements` → Histórico
 
-## ⚙️ Configuração do Ambiente
+### 📋 **Relatórios**
+- `GET /api/reports` → Gerar relatório
+
+---
+
+## ⚙️ **Configuração do Ambiente**
 
 ```env
 MONGO_URI=sua_uri_mongodb
@@ -105,16 +114,9 @@ JWT_SECRET=sua_chave_secreta
 PORT=5000
 ```
 
-## 🔒 Segurança
+---
 
-- ✅ Autenticação JWT
-- ✅ Rate Limiting
-- ✅ CORS Configurado
-- ✅ Sanitização de Dados
-- ✅ Proteção contra XSS
-- ✅ Validação de Entrada
-
-## 📦 Estrutura do Projeto
+## 📦 **Estrutura do Projeto**
 
 ```
 src/
@@ -126,34 +128,30 @@ src/
 └── utils/          # Utilitários
 ```
 
-## 🚀 Performance
+---
 
-- Cache inteligente
-- Compressão de dados
-- Indexação otimizada
-- Consultas eficientes
-- Monitoramento em tempo real
+## 🔒 **Segurança**
 
-## 🤝 Contribuindo
-
-1. Fork o projeto
-2. Crie sua Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a Branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
-
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+- ✅ Autenticação com JWT
+- ✅ Rate limiting configurado
+- ✅ Sanitização de entradas
+- ✅ Prevenção contra XSS
+- ✅ Política CORS ajustada
 
 ---
 
+## 🤝 **Como Contribuir**
+
+1. Faça um fork do projeto
+2. Crie uma branch (`git checkout -b feature/nova-feature`)
+3. Commit suas mudanças (`git commit -m 'Adiciona nova feature'`)
+4. Faça o push para a branch (`git push origin feature/nova-feature`)
+5. Abra um Pull Request
+
+
 <div align="center">
 
-### 🌟 Transforme seus dados em saúde com GlicoFlow! 🌟
+### 🌟 **Transforme o cuidado da diabetes com GlicoFlow!** 🌟
 
-[Documentação Completa](https://seu-site.com/docs) | [Reportar Bug](https://github.com/seu-usuario/glico-flow-api/issues) | [Solicitar Feature](https://github.com/seu-usuario/glico-flow-api/issues)
 
 </div>
-```
-
